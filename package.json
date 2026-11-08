@@ -1,0 +1,42 @@
+{
+  "name": "tlush",
+  "version": "0.7.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/unit/*.test.mjs tests/integration/*.test.mjs",
+    "test:ui": "npm run build && node tests/browser/ui-smoke.mjs",
+    "package": "npm run build && node scripts/package.mjs",
+    "pretest": "npm run build",
+    "lint": "eslint src scripts tests eslint.config.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run lint && npm run check:repo && npm test",
+    "test:ui:home": "npm run build && node tests/browser/home-ui.mjs",
+    "check:repo": "node scripts/check-repo.mjs",
+    "build:dev": "node scripts/build.mjs --dev",
+    "test:ui:regressions": "npm run build && node tests/browser/popup-regressions.mjs"
+  },
+  "dependencies": {
+    "@mysten/sui": "^2.36.0",
+    "@scure/bip39": "^2.0.1",
+    "@wallet-standard/wallet": "^1.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "esbuild": "^0.25.0",
+    "eslint": "^10.14.0",
+    "fflate": "^0.8.3",
+    "globals": "^17.14.0",
+    "playwright": "^1.65.0",
+    "prettier": "^3.9.10"
+  },
+  "description": "A Sui browser-extension wallet for automated dApp testing.",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "overrides": {
+    "minimatch": "^11.0.5"
+  }
+}

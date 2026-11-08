@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.png binary
+*.woff2 binary
+*.zip binary
+
+# Local evidence and generated outputs must not enter source archives.
+/artifacts export-ignore
+/dist export-ignore
+/node_modules export-ignore
+/research export-ignore
+/design export-ignore

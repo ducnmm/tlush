@@ -1,0 +1,5 @@
+Tlush uses the Mysten Sui SDK, Wallet Standard and Scure BIP39 libraries.
+
+The release build includes THIRD_PARTY_LICENSES.txt, generated from the dependency packages actually included by the bundler. License comments in JavaScript bundles are preserved. See package-lock.json in the source repository for exact versions.
+
+Dependency licenses do not grant rights to the reference fonts, icons or generated branding. Those assets are documented separately in REFERENCE_ASSETS.txt and docs/ASSETS.md in the source repository.

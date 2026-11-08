@@ -1,0 +1,8 @@
+node_modules/
+dist/
+artifacts/
+package-lock.json
+public/THIRD_PARTY_NOTICES.txt
+public/fonts/
+public/*.png
+public/sui-token.svg

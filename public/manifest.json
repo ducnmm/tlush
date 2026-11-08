@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Tlush \u2014 Sui Test Wallet",
+  "version": "0.7.0",
+  "description": "A Sui wallet for automated dApp testing. Automatically connects and signs while unlocked.",
+  "permissions": ["storage", "tabs"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "tlush-toolbar16.png",
+      "32": "tlush-toolbar32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["provider.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none';"
+  },
+  "icons": {
+    "16": "tlush-toolbar16.png",
+    "48": "tlush-toolbar48.png",
+    "128": "tlush-toolbar128.png"
+  },
+  "host_permissions": ["https://api.coingecko.com/*"],
+  "minimum_chrome_version": "120"
+}

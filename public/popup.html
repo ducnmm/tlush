@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tlush</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <button class="brand" data-view="home" aria-label="Home">
+        <img src="tlush-logo.png" alt="Tlush" /></button
+      ><button id="network" data-view="settings"></button
+      ><span class="header-spacer"></span
+      ><span class="total" aria-label="Portfolio balance"
+        ><span id="header-balance">—</span
+        ><button id="visibility" aria-label="Hide balance">◉</button></span
+      ><button class="avatar" data-view="accounts" aria-label="Choose account">
+        <img src="tlush-mark.png" alt="Tlush account" />
+      </button>
+    </header>
+    <main>
+      <div id="error" role="alert"></div>
+      <div id="app"></div>
+    </main>
+    <nav>
+      <button data-view="home"><span>▰</span>Home</button
+      ><button data-view="accounts"><span>◉</span>Accounts</button
+      ><button data-view="activity"><span>⇄</span>Activity</button
+      ><button data-view="settings"><span>●</span>Profile</button>
+    </nav>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

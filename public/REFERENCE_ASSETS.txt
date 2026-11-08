@@ -1,0 +1,5 @@
+Tlush includes a generated T logo with white-on-black exports derived from its alpha channel. The design was informed by Slush visual references.
+
+The Aeonik Pro font files, interface SVG paths and SUI token SVG were copied from an installed Slush extension. Redistribution rights have not been verified. Review or replace these assets before public distribution.
+
+See docs/ASSETS.md in the source repository for provenance and remaining licensing requirements. Tlush is an independent test wallet, not an official Slush product.
