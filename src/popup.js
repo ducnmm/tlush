@@ -66,6 +66,7 @@ async function refresh({ external = false } = {}) {
   if (version !== refreshVersion) return;
   const old = current;
   current = state;
+  if (external && JSON.stringify(old) === JSON.stringify(state)) return;
   if (old && old.activity?.[0]?.id !== state.activity?.[0]?.id)
     home.invalidate(state);
   if (external && isDraftView()) {

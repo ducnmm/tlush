@@ -8,13 +8,15 @@ prompt. Use disposable test accounts only.
 Paste this into your coding agent:
 
 ```text
-Install Tlush from https://github.com/ducnmm/tlush.
+Install Tlush from https://github.com/ducnmm/tlush/releases/latest.
 
-Clone it into a permanent local folder. Use Node.js 22.13 or newer,
-then run npm ci and npm run build.
+Download tlush-<version>.zip and its .sha256 file, verify the checksum,
+then extract the ZIP into a permanent local folder. Use the release asset,
+not GitHub's source-code archive. No Node.js or build step is needed.
 
-Open chrome://extensions, enable Developer mode, and load dist/ with
-Load unpacked. If you cannot control Chrome, tell me exactly what to click.
+Open chrome://extensions, enable Developer mode, and use Load unpacked
+to select the folder containing manifest.json. If you cannot control Chrome,
+tell me exactly what to click. Reuse the same folder for future updates.
 Do not change browser policies or modify an existing Chrome profile's files.
 
 If Tlush has no account, create a new test wallet on this machine.
@@ -30,21 +32,25 @@ Report the installed version, folder, and backup location.
 
 ## Manual install
 
-Requires Node.js 22.13+ and Chrome 120+.
+Requires Chrome 120+.
+
+1. Download `tlush-<version>.zip` from the [latest release](https://github.com/ducnmm/tlush/releases/latest).
+2. Extract it into a permanent folder.
+3. Open `chrome://extensions`, enable **Developer mode**, and select **Load unpacked**.
+4. Choose the extracted folder containing `manifest.json`. Create or import a test wallet.
+
+Reload existing dApp tabs. For updates, replace the files in the same folder
+and click **Reload** on the extension card.
+
+## Development
+
+Requires Node.js 22.13+.
 
 ```sh
 git clone https://github.com/ducnmm/tlush.git
 cd tlush
 npm ci
-npm run build
-```
-
-Open `chrome://extensions`, enable **Developer mode**, select **Load unpacked**,
-and choose `dist/`. Create or import a test wallet. Reload existing dApp tabs.
-
-## Development
-
-```sh
+npm run build       # Load dist/ in Chrome
 npm run check       # Format, lint, repository checks and offline tests
 npm run test:ui     # Requires: npx playwright install chromium
 npm run package     # ZIP and checksum in artifacts/
